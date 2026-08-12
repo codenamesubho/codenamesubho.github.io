@@ -62,7 +62,7 @@ const siteConfig: SiteConfig = {
         },
         {
             text: 'X/Twitter',
-            href: 'https://x.com/_no_rules'
+            href: 'https://x.com/_no_rules_'
         }
     ],
     hero: {
