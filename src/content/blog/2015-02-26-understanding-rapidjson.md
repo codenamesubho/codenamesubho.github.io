@@ -49,36 +49,36 @@ using namespace rapidjson;
 using namespace std;
 
 template <typename Writer>
-void display(Writer& writer );
+void display(Writer& writer);
 
 int main() {
- StringBuffer s;
- PrettyWriter<StringBuffer> writer(s);
- display(writer);
- cout << s.GetString() << endl;   // GetString() stringify the Json
- }
+    StringBuffer s;
+    PrettyWriter<StringBuffer> writer(s);
+    display(writer);
+    cout << s.GetString() << endl;   // GetString() stringify the Json
+}
 
 template <typename Writer>
 void display(Writer& writer){
- writer.StartObject();  // write "{"
- writer.String("hello"); // write string "hello"
- writer.String("world");
- writer.String("t");
- writer.Bool(true);   // write boolean value true
- writer.String("f");
- writer.Bool(false);
- writer.String("n");
- writer.Null();        // write null
- writer.String("i");
- writer.Uint(123);     // write unsigned integer value
- writer.String("pi");
- writer.Double(3.1416); // write floating point numbers
- writer.String("a");
- writer.StartArray();  // write "["
- for (unsigned i = 0; i < 4; i++)
- writer.Uint(i);
- writer.EndArray();   // End Array "]"
- writer.EndObject();  // end Object "}"
+    writer.StartObject();  // write "{"
+    writer.String("hello"); // write string "hello"
+    writer.String("world");
+    writer.String("t");
+    writer.Bool(true);   // write boolean value true
+    writer.String("f");
+    writer.Bool(false);
+    writer.String("n");
+    writer.Null();        // write null
+    writer.String("i");
+    writer.Uint(123);     // write unsigned integer value
+    writer.String("pi");
+    writer.Double(3.1416); // write floating point numbers
+    writer.String("a");
+    writer.StartArray();  // write "["
+    for (unsigned i = 0; i < 4; i++)
+        writer.Uint(i);
+    writer.EndArray();   // End Array "]"
+    writer.EndObject();  // end Object "}"
 }
 ```
 
@@ -93,11 +93,11 @@ To modify JSON data:
 ```cpp
 template <typename Document>
 void changeDom(Document& d){
-// any of methods shown below can be used to change the document
-Value& node = d["hello"];  // using a reference
-node.SetString("c++"); // call SetString() on the reference
-d["f"] = true; // access directly and change
-d["t"].SetBool(false); // best way
+    // any of methods shown below can be used to change the document
+    Value& node = d["hello"];  // using a reference
+    node.SetString("c++"); // call SetString() on the reference
+    d["f"] = true; // access directly and change
+    d["t"].SetBool(false); // best way
 }
 ```
 
@@ -106,36 +106,36 @@ d["t"].SetBool(false); // best way
 **Before Manipulation:**
 ```json
 {
-     "hello": "world",
-     "t": true,
-     "f": false,
-     "n": null,
-     "i": 123,
-     "pi": 3.1416,
-     "a": [
+    "hello": "world",
+    "t": true,
+    "f": false,
+    "n": null,
+    "i": 123,
+    "pi": 3.1416,
+    "a": [
         0,
         1,
         2,
         3
-     ]
+    ]
 }
 ```
 
 **After Manipulation:**
 ```json
 {
-     "hello": "c++",
-     "t": false,
-     "f": true,
-     "n": null,
-     "i": 123,
-     "pi": 3.1416,
-     "a": [
+    "hello": "c++",
+    "t": false,
+    "f": true,
+    "n": null,
+    "i": 123,
+    "pi": 3.1416,
+    "a": [
         0,
         1,
         2,
         3
-      ]
+    ]
 }
 ```
 
@@ -157,48 +157,48 @@ template <typename Document>
 void changeDom(Document& d);
 
 int main() {
- StringBuffer s;
- Document d;
- PrettyWriter<StringBuffer> writer(s);
- display(writer);
- cout << "Before Manupulation\n" << s.GetString() << endl ;
- d.Parse(s.GetString());
- changeDom(d);
- s.Clear();   // clear the buffer to prepare for a new json document
- writer.Reset(s);  // resetting writer for a fresh json doc
- d.Accept(writer); // writing parsed document to buffer
- cout << "After Manupulation\n" << s.GetString() << endl;
- }
+    StringBuffer s;
+    Document d;
+    PrettyWriter<StringBuffer> writer(s);
+    display(writer);
+    cout << "Before Manupulation\n" << s.GetString() << endl;
+    d.Parse(s.GetString());
+    changeDom(d);
+    s.Clear();   // clear the buffer to prepare for a new json document
+    writer.Reset(s);  // resetting writer for a fresh json doc
+    d.Accept(writer); // writing parsed document to buffer
+    cout << "After Manupulation\n" << s.GetString() << endl;
+}
 
 template <typename Document>
 void changeDom(Document& d){
-Value& node = d["hello"];
-node.SetString("c++");
-d["f"] = true;
-d["t"].SetBool(false);
+    Value& node = d["hello"];
+    node.SetString("c++");
+    d["f"] = true;
+    d["t"].SetBool(false);
 }
 
 template <typename Writer>
 void display(Writer& writer){
- writer.StartObject();
- writer.String("hello");
- writer.String("world");
- writer.String("t");
- writer.Bool(true);
- writer.String("f");
- writer.Bool(false);
- writer.String("n");
- writer.Null();
- writer.String("i");
- writer.Uint(123);
- writer.String("pi");
- writer.Double(3.1416);
- writer.String("a");
- writer.StartArray();
- for (unsigned i = 0; i < 4; i++)
- writer.Uint(i);
- writer.EndArray();
- writer.EndObject();
+    writer.StartObject();
+    writer.String("hello");
+    writer.String("world");
+    writer.String("t");
+    writer.Bool(true);
+    writer.String("f");
+    writer.Bool(false);
+    writer.String("n");
+    writer.Null();
+    writer.String("i");
+    writer.Uint(123);
+    writer.String("pi");
+    writer.Double(3.1416);
+    writer.String("a");
+    writer.StartArray();
+    for (unsigned i = 0; i < 4; i++)
+        writer.Uint(i);
+    writer.EndArray();
+    writer.EndObject();
 }
 ```
 

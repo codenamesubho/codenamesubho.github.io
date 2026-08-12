@@ -45,18 +45,18 @@ Next section of the file:
 
 ```cmake
 if(WIN32)
- set(LibXML2_INCLUDE_DIRS ../win32/libxml2-2.9/include )
+    set(LibXML2_INCLUDE_DIRS ../win32/libxml2-2.9/include )
 
- if(CMAKE_CL_64)
- set(bits 64)
- else(CMAKE_CL_64)
- set(bits 32)
- endif(CMAKE_CL_64)
+    if(CMAKE_CL_64)
+        set(bits 64)
+    else(CMAKE_CL_64)
+        set(bits 32)
+    endif(CMAKE_CL_64)
 
- file(GLOB LibXML2_LIBRARIES "../win32/libxml2-2.9/lib/libxml2_a_v120_${bits}.lib")
- file(GLOB LibXML2_DEBUG_LIBRARIES ../win32/libxml2-2.9/lib/libxml2d_a_v120_${bits}.lib)
- set(CPPUNIT_INCLUDE_DIR ../win32/cppunit-1.12.1/include)
- file(GLOB CPPUNIT_LIBRARY ../win32/cppunit-1.12.1/lib/cppunitd_v120_a.lib)
+    file(GLOB LibXML2_LIBRARIES "../win32/libxml2-2.9/lib/libxml2_a_v120_${bits}.lib")
+    file(GLOB LibXML2_DEBUG_LIBRARIES ../win32/libxml2-2.9/lib/libxml2d_a_v120_${bits}.lib)
+    set(CPPUNIT_INCLUDE_DIR ../win32/cppunit-1.12.1/include)
+    file(GLOB CPPUNIT_LIBRARY ../win32/cppunit-1.12.1/lib/cppunitd_v120_a.lib)
 endif(WIN32)
 ```
 
@@ -64,10 +64,10 @@ Here, we are checking the platform we are working on and accordingly the library
 
 ```cmake
 if(UNIX)
- execute_process(COMMAND uname OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE CMAKE_SYSTEM_NAME)
- if(CMAKE_SYSTEM_NAME MATCHES Linux)
- set(LINUX_LIBRARIES pthread)
- endif(CMAKE_SYSTEM_NAME MATCHES Linux)
+    execute_process(COMMAND uname OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE CMAKE_SYSTEM_NAME)
+    if(CMAKE_SYSTEM_NAME MATCHES Linux)
+        set(LINUX_LIBRARIES pthread)
+    endif(CMAKE_SYSTEM_NAME MATCHES Linux)
 endif(UNIX)
 ```
 
@@ -134,47 +134,47 @@ Split the source into two halves one being the unit test source files and the ot
 
 ```cmake
 set( test_srcs test.cpp
- adapter_test.cpp
- agent_test.cpp
- checkpoint_test.cpp
- config_test.cpp
- component_test.cpp
- component_event_test.cpp
- connector_test.cpp
- data_item_test.cpp
- device_test.cpp
- globals_test.cpp
- xml_parser_test.cpp
- test_globals.cpp
- xml_printer_test.cpp
- asset_test.cpp
- change_observer_test.cpp
- cutting_tool_test.cpp
- )
+    adapter_test.cpp
+    agent_test.cpp
+    checkpoint_test.cpp
+    config_test.cpp
+    component_test.cpp
+    component_event_test.cpp
+    connector_test.cpp
+    data_item_test.cpp
+    device_test.cpp
+    globals_test.cpp
+    xml_parser_test.cpp
+    test_globals.cpp
+    xml_printer_test.cpp
+    asset_test.cpp
+    change_observer_test.cpp
+    cutting_tool_test.cpp
+    )
 ```
 
 ```cmake
 set(agent_srcs ../agent/adapter.cpp
- ../agent/agent.cpp
- ../agent/checkpoint.cpp
- ../agent/component.cpp
- ../agent/component_event.cpp
- ../agent/change_observer.cpp
- ../agent/connector.cpp
- ../agent/cutting_tool.cpp
- ../agent/data_item.cpp
- ../agent/device.cpp
- ../agent/globals.cpp
- ../agent/options.cpp
- ../agent/xml_parser.cpp
- ../agent/xml_printer.cpp
- ../agent/config.cpp
- ../agent/service.cpp
- ../agent/ref_counted.cpp
- ../agent/asset.cpp
- ../agent/version.cpp
- ../agent/rolling_file_logger.cpp
- )
+    ../agent/agent.cpp
+    ../agent/checkpoint.cpp
+    ../agent/component.cpp
+    ../agent/component_event.cpp
+    ../agent/change_observer.cpp
+    ../agent/connector.cpp
+    ../agent/cutting_tool.cpp
+    ../agent/data_item.cpp
+    ../agent/device.cpp
+    ../agent/globals.cpp
+    ../agent/options.cpp
+    ../agent/xml_parser.cpp
+    ../agent/xml_printer.cpp
+    ../agent/config.cpp
+    ../agent/service.cpp
+    ../agent/ref_counted.cpp
+    ../agent/asset.cpp
+    ../agent/version.cpp
+    ../agent/rolling_file_logger.cpp
+    )
 ```
 
 ### Step #3
@@ -199,14 +199,14 @@ Since we love things to be automated. I added a target for the make command to a
 
 ```cmake
 add_custom_target( cov
-COMMAND [ -d Coverage ]&&rm -rf Coverage/||echo "No folder"
-COMMAND mkdir Coverage
-COMMAND agent_test
-COMMAND cp CMakeFiles/agent_test.dir/__/agent/*.gcno Coverage/
-COMMAND mv CMakeFiles/agent_test.dir/__/agent/*.gcda Coverage/
-COMMAND cd Coverage&&lcov -t "result" -o cppagent_coverage.info -c -d .
-COMMAND cd Coverage&&genhtml -o coverage cppagent_coverage.info
-COMMENT "Generated Coverage Report Successfully!"
+    COMMAND [ -d Coverage ]&&rm -rf Coverage/||echo "No folder"
+    COMMAND mkdir Coverage
+    COMMAND agent_test
+    COMMAND cp CMakeFiles/agent_test.dir/__/agent/*.gcno Coverage/
+    COMMAND mv CMakeFiles/agent_test.dir/__/agent/*.gcda Coverage/
+    COMMAND cd Coverage&&lcov -t "result" -o cppagent_coverage.info -c -d .
+    COMMAND cd Coverage&&genhtml -o coverage cppagent_coverage.info
+    COMMENT "Generated Coverage Report Successfully!"
 )
 ```
 
