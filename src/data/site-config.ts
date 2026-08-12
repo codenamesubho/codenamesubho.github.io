@@ -6,11 +6,11 @@ const siteConfig: SiteConfig = {
     website: 'https://example.com',
     avatar: {
         src: avatar,
-        alt: 'Ethan Donovan'
+        alt: 'Subhendu Ghosh'
     },
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Codenamesubho',
+    subtitle: 'Senior Software Engineer III',
+    description: 'Blog and Portfolio',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
@@ -21,12 +21,12 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'Projects',
-            href: '/projects'
+            text: 'Blog',
+            href: '/blogs'
         },
         {
-            text: 'Blog',
-            href: '/blog'
+            text: 'Projects',
+            href: '/projects'
         },
         {
             text: 'Tags',
@@ -53,21 +53,21 @@ const siteConfig: SiteConfig = {
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'Linkedin',
+            href: 'https://linkedin.com/in/codenamesubho'
         },
         {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
+            text: 'Github',
+            href: 'https://github.com/codenamesubho'
         },
         {
             text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            href: 'https://x.com/_no_rules'
         }
     ],
     hero: {
         title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence.\nMy approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products.\nI have a profound appreciation for top-notch software, visual design, and the principles of product-led growth.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/JustGoodUI/dante-astro-theme) or follow me on [Twitter/X](https://twitter.com/justgoodui).",
+        text: "Senior Software Engineer with 10 years of experience building scalable distributed backend systems and microservices in fast-paced environments. Architected event-driven pipelines processing 50GB+ data per day and led a team of engineers through complex projects and cross-functional migrations. Deep expertise in Python, Kafka, PostgreSQL and AWS. Known for driving technical initiatives end-to-end and delivering under ambiguity.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/codenamesubho) or follow me on [Linkedin](https://linkedin.com/in/codenamesubho).",
         image: {
             src: hero,
             alt: 'A person sitting at a desk in front of a computer'
@@ -81,14 +81,14 @@ const siteConfig: SiteConfig = {
     },
     subscribe: {
         enabled: true,
-        title: 'Subscribe to Dante Newsletter',
+        title: 'Subscribe to Codenamesubho Newsletter',
         text: 'One update per week. All the latest posts directly in your inbox.',
         form: {
             action: '#'
         }
     },
     postsPerPage: 8,
-    projectsPerPage: 8
+    projectsPerPage: 0
 };
 
 export default siteConfig;
