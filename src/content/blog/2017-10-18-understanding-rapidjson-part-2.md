@@ -99,14 +99,14 @@ void changeDom(Document& d){
     StringBuffer s;
     PrettyWriter<StringBuffer> writer(s);
     writer.StartObject();
-    writer.String("New");
-    writer.StartObject();
-    writer.String("Numbers");
-    writer.StartArray();
-    for (unsigned i = 0; i < 10; i++)
-        writer.Uint(i);
-    writer.EndArray();
-    writer.EndObject();
+        writer.String("New");
+        writer.StartObject();
+            writer.String("Numbers");
+            writer.StartArray();
+            for (unsigned i = 0; i < 10; i++)
+                writer.Uint(i);
+            writer.EndArray();
+        writer.EndObject();
     writer.EndObject();
     subdoc.Parse(s.GetString()); // Parsing the string written to buffer to form a sub DOM
 
