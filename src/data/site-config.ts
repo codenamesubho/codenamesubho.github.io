@@ -66,7 +66,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Fault-tolerant || Curiosity-driven || Production-tested.',
+        title: "Built to scale. Written to share",
         text: "I'm Subhendu Ghosh, a backend engineer with about a decade of experience building distributed systems that keep running when things get messy. I've spent my career designing event-driven pipelines, scaling microservices, and untangling legacy systems across HR tech, workflow automation, and data-heavy platforms. My toolkit centers on Python, Kafka, PostgreSQL, and AWS, with Spark, Airflow close at hand. These days I'm also exploring AI tooling, building small agents and integrations to see what they're really good for. This site is where I write it all down: the designs that worked, the incidents that taught me something, and the experiments I couldn't resist.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/codenamesubho) or follow me on [Linkedin](https://linkedin.com/in/codenamesubho).",
         image: {
             src: hero,
