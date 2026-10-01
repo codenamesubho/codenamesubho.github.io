@@ -66,8 +66,8 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to my corner of the web!',
-        text: "Senior Software Engineer with 10 years of experience building scalable distributed backend systems and microservices in fast-paced environments. Architected event-driven pipelines processing 50GB+ data per day and led a team of engineers through complex projects and cross-functional migrations. Deep expertise in Python, Kafka, PostgreSQL and AWS. Known for driving technical initiatives end-to-end and delivering under ambiguity.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/codenamesubho) or follow me on [Linkedin](https://linkedin.com/in/codenamesubho).",
+        title: 'Fault-tolerant, curiosity-driven, production-tested.',
+        text: "I'm Subhendu Ghosh, a backend engineer with about a decade of experience building distributed systems that keep running when things get messy. I've spent my career designing event-driven pipelines, scaling microservices, and untangling legacy systems across HR tech, workflow automation, and data-heavy platforms. My toolkit centers on Python, Kafka, PostgreSQL, and AWS, with Spark, Airflow close at hand. These days I'm also exploring AI tooling, building small agents and integrations to see what they're really good for. This site is where I write it all down: the designs that worked, the incidents that taught me something, and the experiments I couldn't resist.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/codenamesubho) or follow me on [Linkedin](https://linkedin.com/in/codenamesubho).",
         image: {
             src: hero,
             alt: 'A person sitting at a desk in front of a computer'
