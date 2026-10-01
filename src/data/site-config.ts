@@ -9,7 +9,7 @@ const siteConfig: SiteConfig = {
         alt: 'Subhendu Ghosh'
     },
     title: 'Codenamesubho',
-    subtitle: 'Senior Software Engineer III',
+    subtitle: 'Senior Software Engineer',
     description: 'Blog and Portfolio',
     image: {
         src: '/dante-preview.jpg',
@@ -34,10 +34,10 @@ const siteConfig: SiteConfig = {
         }
     ],
     footerNavLinks: [
-        {
-            text: 'About',
-            href: '/about'
-        },
+        // {
+        //     text: 'About',
+        //     href: '/about'
+        // },
         {
             text: 'Contact',
             href: '/contact'
@@ -66,7 +66,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Hi There & Welcome to My Corner of the Web!',
+        title: 'Hi There & Welcome to my corner of the web!',
         text: "Senior Software Engineer with 10 years of experience building scalable distributed backend systems and microservices in fast-paced environments. Architected event-driven pipelines processing 50GB+ data per day and led a team of engineers through complex projects and cross-functional migrations. Deep expertise in Python, Kafka, PostgreSQL and AWS. Known for driving technical initiatives end-to-end and delivering under ambiguity.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/codenamesubho) or follow me on [Linkedin](https://linkedin.com/in/codenamesubho).",
         image: {
             src: hero,
