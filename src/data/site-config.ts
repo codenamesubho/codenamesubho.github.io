@@ -3,7 +3,7 @@ import hero from '../assets/images/hero.jpg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://codenamesubho.dev',
     avatar: {
         src: avatar,
         alt: 'Subhendu Ghosh'
@@ -88,7 +88,7 @@ const siteConfig: SiteConfig = {
         }
     },
     postsPerPage: 8,
-    projectsPerPage: 1
+    projectsPerPage: 8
 };
 
 export default siteConfig;
